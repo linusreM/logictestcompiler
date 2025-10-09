@@ -1,31 +1,3 @@
-#Format: (Bytes) [Stimulus Low]       , [Stimulus High]       , 
-#				 [Sensitivity Low]    , [Sensitivity High]    , 
-#				 [Expected output Low], [Expected output High],
-#				 [Sensitivity Low]    , [Sensitivity High]
-#                    ..... Repeat as many as needed .....
-#		  (EOF)  [0x00], [0x00], [0x00], [0x00], [0x00], [0x00], [0x00], [0x00]
-#		(0x00 * 8)
-#
-#
-#	- Stimulus is the output state of the I/O modules at the start of the test.
-#	- Sensitivity sets which of the outputs should be effected by the state setting
-#	- Expected output is the expected state that will be presented on the I/O module.
-#	- Sensitivity refers to the inputs that should effect evaluation 
-#
-#	The test ends with eight consecutive bytes of zeroes.
-#
-#	If a test needs to do a "no op" just make the sensitivity bytes 0x00, and the stimulus non-zero
-#
-#   File extension is .secret, and name the test according to lab and level, i.e. 1A.secret, 2A.secret, 1B.secret
-
-
-
-# add_test("1234", "b0011", "01234567", "b0001101000")
-#Outputs Outval Inputs  Inval
-#1,2,3,4;4b0001;8-12,14;3d2,3b101
-#r;4b0010;
-
-
 from dataclasses import dataclass, field
 import sys
 import re
